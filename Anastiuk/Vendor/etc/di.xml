@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="anastiuk_vendor_listing_data_source" xsi:type="string">AnastiukVendorCollection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="AnastiukVendorCollection" type="Anastiuk\Vendor\Ui\DataProvider\Reviews\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">anastiuk_vendor_vendors</argument>
+            <argument name="resourceModel" xsi:type="string">Anastiuk\Vendor\Model\ResourceModel\Reviews</argument>
+        </arguments>
+    </virtualType>
+    <!-- Image Uploader -->
+    <virtualType name="VirtualTypeName" type="Magento\Catalog\Model\ImageUploader">
+        <arguments>
+            <argument name="baseTmpPath" xsi:type="string">productreview/tmp/image</argument>
+            <argument name="basePath" xsi:type="string">productreview/image</argument>
+            <argument name="allowedExtensions" xsi:type="array">
+                <item name="jpg" xsi:type="string">jpg</item>
+                <item name="jpeg" xsi:type="string">jpeg</item>
+                <item name="gif" xsi:type="string">gif</item>
+                <item name="png" xsi:type="string">png</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Anastiuk\Vendor\Controller\Adminhtml\Uploader\Uploader">
+        <arguments>
+            <argument name="imageUploader" xsi:type="object">VirtualTypeImage</argument>
+        </arguments>
+    </type>
+    <!-- End Image Uploader -->
+</config>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Anastiuk_Vendor::vendor" title="Vendor" module="Anastiuk_Vendor" sortOrder="11" resource="Anastiuk_Vendor::vendor"/>
+        <add id="Anastiuk_Vendor::vendors" title="All vendors" module="Anastiuk_Vendor" sortOrder="1" action="vendor/vendors/index" resource="Anastiuk_Vendor::vendors" parent="Anastiuk_Vendor::vendor"/>
+    </menu>
+</config>
